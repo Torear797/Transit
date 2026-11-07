@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Политика конфиденциальности Transtit — приложения-дневника с локальным хранением данных, без учётной записи и без бэкенда." />
+  <meta name="robots" content="index, follow" />
+  <title>Политика конфиденциальности — Transtit</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #1c1c1e;
+      --muted: #6e6e73;
+      --accent: #0066cc;
+      --accent-hover: #004a99;
+      --border: #e5e5ea;
+      --code-bg: #f5f5f7;
+      --card-bg: #f9f9fb;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f0f10;
+        --fg: #f5f5f7;
+        --muted: #9a9aa0;
+        --accent: #4da3ff;
+        --accent-hover: #7cbcff;
+        --border: #2c2c2e;
+        --code-bg: #1c1c1e;
+        --card-bg: #17171a;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 48px 24px 96px;
+    }
+
+    header {
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      line-height: 1.2;
+      margin: 0 0 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 12px;
+    }
+
+    nav.toc {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 40px;
+    }
+
+    nav.toc h2 {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      margin: 0 0 12px;
+      font-weight: 600;
+    }
+
+    nav.toc ol {
+      margin: 0;
+      padding-left: 22px;
+      columns: 1;
+    }
+
+    @media (min-width: 640px) {
+      nav.toc ol {
+        columns: 2;
+        column-gap: 32px;
+      }
+    }
+
+    nav.toc li {
+      margin: 6px 0;
+      break-inside: avoid;
+    }
+
+    nav.toc a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s ease, color 0.15s ease;
+    }
+
+    nav.toc a:hover {
+      color: var(--accent-hover);
+      border-bottom-color: currentColor;
+    }
+
+    section {
+      margin-bottom: 40px;
+      scroll-margin-top: 24px;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      line-height: 1.3;
+      margin: 40px 0 16px;
+      letter-spacing: -0.01em;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      margin: 24px 0 8px;
+    }
+
+    p {
+      margin: 0 0 16px;
+    }
+
+    ul, ol {
+      margin: 0 0 16px;
+      padding-left: 24px;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    strong {
+      font-weight: 600;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s ease;
+      overflow-wrap: break-word;
+    }
+
+    a:hover {
+      border-bottom-color: currentColor;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.9em;
+      background: var(--code-bg);
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+
+    .callout {
+      background: var(--card-bg);
+      border-left: 3px solid var(--accent);
+      padding: 16px 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    .callout p:last-child {
+      margin-bottom: 0;
+    }
+
+    footer {
+      margin-top: 64px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+        color: #000;
+        font-size: 12pt;
+      }
+      nav.toc, footer {
+        display: none;
+      }
+      a {
+        color: #000;
+      }
+      section {
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Политика конфиденциальности Transtit</h1>
+      <p class="subtitle">Дневник с локальным хранением данных. Без учётной записи. Без бэкенда.</p>
+      <p class="meta"><strong>Дата последнего обновления:</strong> <time datetime="2026-11-07">7 ноября 2026 г.</time></p>
+    </header>
+
+    <nav class="toc" aria-label="Содержание">
+      <h2>Содержание</h2>
+      <ol>
+        <li><a href="#summary">Краткое резюме</a></li>
+        <li><a href="#data-you-create">Какие данные вы создаёте и где они хранятся</a></li>
+        <li><a href="#analytics">Аналитика (AppMetrica)</a></li>
+        <li><a href="#backup-export">Резервная копия и экспорт</a></li>
+        <li><a href="#permissions">Разрешения iOS</a></li>
+        <li><a href="#what-we-do-not-do">Чего мы не делаем</a></li>
+        <li><a href="#security">Безопасность</a></li>
+        <li><a href="#deletion">Удаление данных</a></li>
+        <li><a href="#children">Дети</a></li>
+        <li><a href="#changes">Изменения в настоящей Политике</a></li>
+        <li><a href="#contact">Контакты</a></li>
+      </ol>
+    </nav>
+
+    <p>
+      <strong>Transtit</strong> («Приложение») — это приложение для ведения дневника с локальной
+      аналитикой, разработанное <strong>Артёмом Клычем</strong> («Разработчик», «мы»). Приложение
+      не требует создания учётной записи, не имеет серверной части (бэкенда) и хранит записи
+      дневника исключительно на вашем устройстве.
+    </p>
+    <p>
+      Настоящая Политика конфиденциальности объясняет, какие данные обрабатываются при
+      использовании Приложения, где они хранятся и каким образом вы можете ими управлять.
+    </p>
+
+    <section id="summary">
+      <h2>1. Краткое резюме</h2>
+      <ul>
+        <li><strong>Мы не собираем создаваемый вами контент.</strong> У нас нет доступа к вашим записям, датам, тегам или любым другим сведениям, которые вы вносите в дневник. Эти данные остаются в локальном хранилище Приложения на вашем устройстве.</li>
+        <li><strong>Мы используем ограниченный аналитический SDK (AppMetrica), чтобы понимать техническую статистику использования.</strong> AppMetrica обрабатывает обезличенные технические данные, которые не позволяют идентифицировать вас. Вы можете в любой момент отключить сбор аналитики (см. <a href="#analytics">раздел 3</a>).</li>
+        <li><strong>Мы не продаём и не передаём ваши данные третьим лицам в рекламных целях.</strong> Единственный интегрированный сторонний сервис — AppMetrica, который действует как обработчик данных по нашему поручению.</li>
+        <li><strong>У Приложения нет бэкенда.</strong> Оно не отправляет содержимое вашего дневника на какие-либо серверы, контролируемые нами.</li>
+      </ul>
+    </section>
+
+    <section id="data-you-create">
+      <h2>2. Какие данные вы создаёте и где они хранятся</h2>
+      <p>Приложение работает с данными, которые вы создаёте добровольно:</p>
+      <ul>
+        <li>тексты записей дневника;</li>
+        <li>даты, метки времени, теги или категории (если вы решите их использовать);</li>
+        <li>настройки Приложения (например, предпочтения по отображению).</li>
+      </ul>
+      <p>
+        Все такие данные хранятся <strong>исключительно в локальном контейнере (песочнице) Приложения на вашем iPhone или iPad</strong>.
+        Разработчик не имеет технической возможности получить к ним доступ, скопировать их или просмотреть.
+      </p>
+    </section>
+
+    <section id="analytics">
+      <h2>3. Аналитика (AppMetrica)</h2>
+      <p>
+        Мы используем <strong>AppMetrica</strong> — сервис аналитики, предоставляемый компанией
+        Яндекс, для сбора агрегированной обезличенной технической информации о том, как
+        используется Приложение. AppMetrica помогает нам понимать производительность приложения и
+        улучшать пользовательский опыт.
+      </p>
+
+      <h3>Что AppMetrica может собирать (по умолчанию)</h3>
+      <ul>
+        <li>Информация об устройстве: версия ОС, модель устройства, разрешение экрана;</li>
+        <li>Данные об использовании: запуски, нажатия, длительность сессий, события внутри приложения;</li>
+        <li>Идентификаторы: идентификатор уровня устройства (например, IDFA) <strong>только если</strong> вы предоставили разрешение на отслеживание через платформу App Tracking Transparency; в противном случае SDK работает без идентификаторов отслеживания;</li>
+        <li>Диагностические данные: журналы сбоев, метрики производительности.</li>
+      </ul>
+
+      <p>
+        AppMetrica <strong>не</strong> собирает содержимое ваших записей дневника. По данным
+        Яндекса, вся информация, обрабатываемая AppMetrica, является обезличенной и не может быть
+        использована для идентификации конкретного пользователя.
+      </p>
+
+      <h3>Как отключить аналитику</h3>
+      <p>
+        Вы можете в любой момент отключить сбор аналитических данных в настройках Приложения
+        (например, переключателем «Конфиденциальность» или «Аналитика»). После отключения
+        AppMetrica перестаёт отправлять статистику с вашего устройства.
+      </p>
+
+      <div class="callout">
+        <p>
+          Подробнее о том, как Яндекс обрабатывает данные, см. в
+          <a href="https://yandex.ru/legal/confidential/" target="_blank" rel="noopener noreferrer">Политике конфиденциальности Яндекса</a>
+          и
+          <a href="https://yandex.ru/legal/metrica_agreement/" target="_blank" rel="noopener noreferrer">Условиях использования AppMetrica</a>.
+        </p>
+      </div>
+    </section>
+
+    <section id="backup-export">
+      <h2>4. Резервная копия и экспорт</h2>
+
+      <h3>Локальная резервная копия</h3>
+      <p>
+        Приложение позволяет создавать файл резервной копии. Этот файл формируется и сохраняется
+        <strong>полностью на вашем устройстве</strong> (или в выбранном вами месте через системный
+        диалог iOS). Мы не загружаем резервную копию на какие-либо серверы.
+      </p>
+
+      <h3>Экспорт в PDF</h3>
+      <p>
+        Вы можете экспортировать записи дневника в PDF-файл. Экспортированный файл сохраняется
+        локально на вашем устройстве или передаётся через системное меню «Поделиться» iOS по вашему
+        выбору. Разработчик не получает копию экспортированного файла.
+      </p>
+
+      <h3>iCloud</h3>
+      <p>
+        Приложение не использует iCloud и какую-либо облачную синхронизацию. Ваши данные не
+        создаются в iCloud автоматически средствами Приложения.
+      </p>
+    </section>
+
+    <section id="permissions">
+      <h2>5. Разрешения iOS</h2>
+      <p>
+        Приложение не запрашивает доступ к чувствительным разрешениям iOS, таким как уведомления,
+        геолокация, контакты, фотографии или биометрическая аутентификация (Face&nbsp;ID / Touch&nbsp;ID).
+        Если в будущих версиях потребуется какое-либо разрешение, оно будет запрошено только при
+        необходимости для конкретной функции, и вы сможете отозвать его в настройках iOS.
+      </p>
+    </section>
+
+    <section id="what-we-do-not-do">
+      <h2>6. Чего мы не делаем</h2>
+      <ul>
+        <li>Не собираем ваше имя, адрес электронной почты, номер телефона или любую информацию об учётной записи.</li>
+        <li>Не получаем доступ к содержимому вашего дневника.</li>
+        <li>Не используем файлы cookie, пиксели отслеживания или отпечатки браузера (fingerprinting).</li>
+        <li>Не продаём, не сдаём в аренду и не обмениваем ваши данные.</li>
+        <li>Не используем аналитические данные для рекламы или кросс-приложенческого отслеживания (если только вы явно не предоставили разрешение на отслеживание — в этом случае AppMetrica может использовать IDFA, как описано в <a href="#analytics">разделе 3</a>).</li>
+      </ul>
+    </section>
+
+    <section id="security">
+      <h2>7. Безопасность</h2>
+      <p>
+        Поскольку содержимое вашего дневника хранится локально, его защита обеспечивается
+        механизмами безопасности iOS (изоляция приложений, шифрование файловой системы при
+        включённом код-пароле). Рекомендуем использовать код-пароль на устройстве и поддерживать
+        актуальную версию iOS.
+      </p>
+    </section>
+
+    <section id="deletion">
+      <h2>8. Удаление данных</h2>
+      <p>Вы полностью контролируете свои данные:</p>
+      <ul>
+        <li>Чтобы удалить все записи дневника и настройки, достаточно <strong>удалить Приложение</strong> с устройства. Локальные данные Приложения при этом стираются средствами iOS.</li>
+        <li>Файлы резервных копий и экспортированные PDF, сохранённые вами вне Приложения (например, в «Файлах» или переданные в другое приложение), не удаляются автоматически. Вы можете удалить их вручную средствами соответствующего приложения или приложения «Файлы» iOS.</li>
+      </ul>
+    </section>
+
+    <section id="children">
+      <h2>9. Дети</h2>
+      <p>
+        Приложение не предназначено для детей младше 13 лет (или иного возраста, установленного
+        законодательством вашей юрисдикции). Поскольку Приложение не собирает персональные данные
+        и не требует учётной записи, оно осознанно не собирает данные о детях. Если вы считаете,
+        что ребёнок использует Приложение, вы можете удалить Приложение с устройства.
+      </p>
+    </section>
+
+    <section id="changes">
+      <h2>10. Изменения в настоящей Политике</h2>
+      <p>
+        Мы можем периодически обновлять настоящую Политику конфиденциальности, чтобы отражать
+        изменения в Приложении или в требованиях законодательства. Актуальная версия всегда будет
+        доступна на этой странице, а дата «Последнее обновление» в начале документа указывает,
+        когда Политика была пересмотрена. О существенных изменениях мы постараемся уведомить вас
+        через описание обновления в App Store.
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>11. Контакты</h2>
+      <p>
+        По любым вопросам, связанным с настоящей Политикой конфиденциальности или практиками
+        обработки данных, вы можете связаться с Разработчиком по адресу:
+      </p>
+      <p>
+        <strong>Email:</strong>
+        <a href="mailto:m.apps.support@icloud.com">m.apps.support@icloud.com</a>
+      </p>
+    </section>
+
+    <footer>
+      <p>&copy; <span id="year">2026</span> Артём Клыч. Все права защищены.</p>
+    </footer>
+  </div>
+
+  <script>
+    // Автоматически обновляет год в копирайте.
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
