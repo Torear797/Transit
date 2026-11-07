@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Privacy Policy for Transtit — a local-first diary app with no account and no backend." />
+  <meta name="robots" content="index, follow" />
+  <title>Privacy Policy — Transtit</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #1c1c1e;
+      --muted: #6e6e73;
+      --accent: #0066cc;
+      --accent-hover: #004a99;
+      --border: #e5e5ea;
+      --code-bg: #f5f5f7;
+      --card-bg: #f9f9fb;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f0f10;
+        --fg: #f5f5f7;
+        --muted: #9a9aa0;
+        --accent: #4da3ff;
+        --accent-hover: #7cbcff;
+        --border: #2c2c2e;
+        --code-bg: #1c1c1e;
+        --card-bg: #17171a;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 48px 24px 96px;
+    }
+
+    header {
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      line-height: 1.2;
+      margin: 0 0 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 12px;
+    }
+
+    nav.toc {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 40px;
+    }
+
+    nav.toc h2 {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      margin: 0 0 12px;
+      font-weight: 600;
+    }
+
+    nav.toc ol {
+      margin: 0;
+      padding-left: 22px;
+      columns: 1;
+    }
+
+    @media (min-width: 640px) {
+      nav.toc ol {
+        columns: 2;
+        column-gap: 32px;
+      }
+    }
+
+    nav.toc li {
+      margin: 6px 0;
+      break-inside: avoid;
+    }
+
+    nav.toc a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s ease, color 0.15s ease;
+    }
+
+    nav.toc a:hover {
+      color: var(--accent-hover);
+      border-bottom-color: currentColor;
+    }
+
+    section {
+      margin-bottom: 40px;
+      scroll-margin-top: 24px;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      line-height: 1.3;
+      margin: 40px 0 16px;
+      letter-spacing: -0.01em;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      margin: 24px 0 8px;
+    }
+
+    p {
+      margin: 0 0 16px;
+    }
+
+    ul, ol {
+      margin: 0 0 16px;
+      padding-left: 24px;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    strong {
+      font-weight: 600;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s ease;
+      overflow-wrap: break-word;
+    }
+
+    a:hover {
+      border-bottom-color: currentColor;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.9em;
+      background: var(--code-bg);
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+
+    .callout {
+      background: var(--card-bg);
+      border-left: 3px solid var(--accent);
+      padding: 16px 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    .callout p:last-child {
+      margin-bottom: 0;
+    }
+
+    footer {
+      margin-top: 64px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+        color: #000;
+        font-size: 12pt;
+      }
+      nav.toc, footer {
+        display: none;
+      }
+      a {
+        color: #000;
+      }
+      section {
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Privacy Policy for Transtit</h1>
+      <p class="subtitle">Local-first diary app. No account. No backend.</p>
+      <p class="meta"><strong>Last updated:</strong> <time datetime="2026-11-07">November 7, 2026</time></p>
+    </header>
+
+    <nav class="toc" aria-label="Table of contents">
+      <h2>Contents</h2>
+      <ol>
+        <li><a href="#summary">Summary</a></li>
+        <li><a href="#data-you-create">Data You Create and Where It Is Stored</a></li>
+        <li><a href="#analytics">Analytics (AppMetrica)</a></li>
+        <li><a href="#backup-export">Backup and Export</a></li>
+        <li><a href="#permissions">Permissions</a></li>
+        <li><a href="#what-we-do-not-do">What We Do Not Do</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#deletion">Data Deletion</a></li>
+        <li><a href="#children">Children</a></li>
+        <li><a href="#changes">Changes to This Policy</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ol>
+    </nav>
+
+    <p>
+      <strong>Transtit</strong> (&ldquo;the App&rdquo;) is a diary application with local analytics,
+      developed by <strong>Artem Klych</strong> (&ldquo;Developer&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;).
+      The App does not require an account, has no backend server, and stores your diary entries
+      exclusively on your device.
+    </p>
+    <p>
+      This Privacy Policy explains what information is processed when you use the App, where it is
+      stored, and how you can control it.
+    </p>
+
+    <section id="summary">
+      <h2>1. Summary</h2>
+      <ul>
+        <li><strong>We do not collect the content you create.</strong> We have no access to your diary entries, dates, tags, or any other information you enter into the App. This data remains in the App&rsquo;s local storage on your device.</li>
+        <li><strong>We use a limited analytics SDK (AppMetrica) to understand technical usage.</strong> AppMetrica processes non-personalised technical data that cannot be used to identify you. You can disable analytics collection at any time (see <a href="#analytics">Section 3</a>).</li>
+        <li><strong>We do not sell or share your data with third parties for advertising.</strong> The only third-party service integrated is AppMetrica, which acts as a data processor on our behalf.</li>
+        <li><strong>The App has no backend.</strong> It does not send your diary content to any server controlled by us.</li>
+      </ul>
+    </section>
+
+    <section id="data-you-create">
+      <h2>2. Data You Create and Where It Is Stored</h2>
+      <p>The App processes data that you voluntarily create:</p>
+      <ul>
+        <li>Diary entry texts;</li>
+        <li>Dates, timestamps, tags, or categories (if you choose to use them);</li>
+        <li>App settings (e.g., display preferences).</li>
+      </ul>
+      <p>
+        All such data is stored <strong>exclusively in the local container (sandbox) of the App on your iPhone or iPad</strong>.
+        The Developer has no technical means to access, copy, or view this content.
+      </p>
+    </section>
+
+    <section id="analytics">
+      <h2>3. Analytics (AppMetrica)</h2>
+      <p>
+        We use <strong>AppMetrica</strong>, an analytics service provided by Yandex, to collect
+        aggregated, non-personalised technical information about how the App is used. AppMetrica
+        helps us understand app performance and improve the user experience.
+      </p>
+
+      <h3>What AppMetrica may collect (by default)</h3>
+      <ul>
+        <li>Device information: OS version, device model, screen resolution;</li>
+        <li>App usage data: launches, taps, session duration, in-app events;</li>
+        <li>Identifiers: a device-level identifier (such as IDFA) <strong>only if</strong> you have granted tracking permission via the App Tracking Transparency framework; otherwise, the SDK operates without tracking identifiers;</li>
+        <li>Diagnostic data: crash logs, performance metrics.</li>
+      </ul>
+
+      <p>
+        AppMetrica does <strong>not</strong> collect the content of your diary entries. According to
+        Yandex, all data processed by AppMetrica is non-personalised and cannot be used to identify
+        an individual user.
+      </p>
+
+      <h3>How to disable analytics</h3>
+      <p>
+        You can disable the collection of analytics data at any time from the App&rsquo;s settings
+        (e.g., a &ldquo;Privacy&rdquo; or &ldquo;Analytics&rdquo; toggle). When disabled, AppMetrica
+        stops sending statistics from your device.
+      </p>
+
+      <div class="callout">
+        <p>
+          For more information about how Yandex processes data, please refer to the
+          <a href="https://yandex.com/legal/privacy_policy/" target="_blank" rel="noopener noreferrer">Yandex Privacy Policy</a>
+          and the
+          <a href="https://yandex.ru/legal/metrica_agreement/" target="_blank" rel="noopener noreferrer">AppMetrica Data Processing Agreement</a>.
+        </p>
+      </div>
+    </section>
+
+    <section id="backup-export">
+      <h2>4. Backup and Export</h2>
+
+      <h3>Local backup</h3>
+      <p>
+        The App allows you to create a backup file. This file is generated and saved
+        <strong>entirely on your device</strong> (or in a location you choose via the iOS file picker).
+        We do not upload the backup to any server.
+      </p>
+
+      <h3>PDF export</h3>
+      <p>
+        You can export diary entries as a PDF file. The exported file is saved locally on your
+        device or shared through the iOS share sheet at your discretion. The Developer does not
+        receive a copy of the exported file.
+      </p>
+
+      <h3>iCloud</h3>
+      <p>
+        The App does not use iCloud or any cloud synchronisation. Your data is not automatically
+        backed up to iCloud by the App.
+      </p>
+    </section>
+
+    <section id="permissions">
+      <h2>5. Permissions</h2>
+      <p>
+        The App does not request access to sensitive iOS permissions such as notifications,
+        location, contacts, photos, or biometric authentication (Face&nbsp;ID / Touch&nbsp;ID).
+        If future versions require any permission, it will be requested only when necessary for a
+        specific feature, and you will be able to revoke it in iOS Settings.
+      </p>
+    </section>
+
+    <section id="what-we-do-not-do">
+      <h2>6. What We Do Not Do</h2>
+      <ul>
+        <li>We do not collect your name, email address, phone number, or any account information.</li>
+        <li>We do not access your diary content.</li>
+        <li>We do not use cookies, tracking pixels, or fingerprinting.</li>
+        <li>We do not sell, rent, or trade your data.</li>
+        <li>We do not use analytics data for advertising or cross-app tracking (unless you explicitly grant tracking permission, in which case AppMetrica may use IDFA as described in <a href="#analytics">Section 3</a>).</li>
+      </ul>
+    </section>
+
+    <section id="security">
+      <h2>7. Security</h2>
+      <p>
+        Because your diary content is stored locally, its protection relies on iOS security
+        mechanisms (app sandboxing, file-system encryption when a passcode is enabled). We
+        recommend using a device passcode and keeping iOS up to date.
+      </p>
+    </section>
+
+    <section id="deletion">
+      <h2>8. Data Deletion</h2>
+      <p>You have full control over your data:</p>
+      <ul>
+        <li>To delete all diary entries and settings, simply <strong>delete the App</strong> from your device. This removes the App&rsquo;s local data.</li>
+        <li>Backup files and exported PDFs that you have saved outside the App (e.g., in Files or shared to another app) are not deleted automatically. You can delete them manually using the respective app or iOS Files.</li>
+      </ul>
+    </section>
+
+    <section id="children">
+      <h2>9. Children</h2>
+      <p>
+        The App is not directed to children under 13 (or the minimum age required by your
+        jurisdiction). Because the App does not collect personal information and does not require
+        an account, it does not knowingly collect data from children. If you believe a child has
+        used the App, you can delete the App from the device.
+      </p>
+    </section>
+
+    <section id="changes">
+      <h2>10. Changes to This Policy</h2>
+      <p>
+        We may update this Privacy Policy from time to time to reflect changes in the App or legal
+        requirements. The latest version will always be available at this page, and the
+        &ldquo;Last updated&rdquo; date at the top will indicate when the policy was revised. If
+        changes are material, we will endeavour to notify you through the App Store release notes.
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>11. Contact</h2>
+      <p>
+        If you have any questions about this Privacy Policy or privacy practices, please contact
+        the Developer at:
+      </p>
+      <p>
+        <strong>Email:</strong>
+        <a href="mailto:m.apps.support@icloud.com">m.apps.support@icloud.com</a>
+      </p>
+    </section>
+
+    <footer>
+      <p>&copy; <span id="year">2026</span> Artem Klych. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    // Dynamically update the copyright year.
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
